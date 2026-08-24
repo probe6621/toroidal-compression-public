@@ -192,4 +192,4 @@ with gr.Blocks(title="Toroidal Compression Demo") as demo:
 
 
 if __name__ == "__main__":
-    demo.launch(theme=gr.themes.Soft(), server_name="0.0.0.0", server_port=7860, share=False)
+    demo.launch(server_name="0.0.0.0", server_port=7860, share=False)
