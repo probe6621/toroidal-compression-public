@@ -1,19 +1,23 @@
 # FAQ
 
-## What is the Community Edition?
+## What is the Demo/Evaluation Edition?
 
-A public evaluation repository with the SEO landing page, benchmark methodology, and conversion path to Pro/Enterprise access.
+A public demo/evaluation repository with the SEO landing page, benchmark methodology, and conversion path to Pro/Enterprise access.
 
 ## Does this repo contain the full commercial source?
 
 No. Full commercial source and deployment assets remain in the private core repository.
 
+## Why pay for Pro instead of staying free?
+
+The free edition is for evaluation. Pro is for production: packaged commercial build delivery, managed updates, commercial deployment terms, and priority support/SLA-backed response targets.
+
 ## How do I request full access?
 
-Open a GitHub issue in this repo with either:
+Use one of these paths:
 
-- `Pro Tier Access Request`
-- `Enterprise Pipeline Inquiry`
+- Pro subscription checkout: https://clearsolutions.lemonsqueezy.com/checkout/buy/f7172d35-feea-4d25-8adf-1a71b8ff992c
+- Enterprise API access: contact@epsilonframework.org
 
 ## Are benchmark values reproducible?
 

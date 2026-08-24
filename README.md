@@ -1,4 +1,4 @@
-# Toroidal Compression (Community Edition)
+# Toroidal Compression (Demo / Evaluation Edition)
 
 > Topology-driven compression for multi-variable telemetry, sensor streams, and structured numeric data.
 
@@ -17,28 +17,29 @@
 
 Toroidal Compression projects linear data into a toroidal manifold, applies residual correction for exact reconstruction, and optionally uses `lz4` entropy packaging at the serialization boundary.
 
-This public Community Edition is designed for evaluation and technical trust:
+This public Demo Edition is designed for evaluation and technical trust:
 
 - transparent architecture and positioning
 - reproducible benchmark methodology
 - documented stress-test telemetry
 - CI-backed repo health checks
 
-## Community Edition vs Full Engine
+## Demo Edition vs Pro / Enterprise
 
-| Feature | Community Edition (Free) | Full / Enterprise Engine |
+| Feature | Demo Edition (Free) | Pro / Enterprise |
 | :--- | :---: | :---: |
 | Landing Page + Docs | ✅ | ✅ |
-| Topology + Residual Architecture | ✅ (documented) | ✅ (full implementation) |
-| Benchmark and Sweep Methodology | ✅ | ✅ |
-| Full Source Distribution | ❌ | ✅ |
-| Advanced Packaging/Deployment Profiles | ❌ | ✅ |
-| Priority Support and Integrations | ❌ | ✅ |
+| Architecture + benchmark telemetry | ✅ | ✅ |
+| Commercial build package | ❌ | ✅ |
+| Managed updates | ❌ | ✅ |
+| Commercial deployment license | ❌ | ✅ |
+| Hosted API / integration support | ❌ | ✅ |
+| Priority support / SLA targets | ❌ | ✅ |
 
-Need commercial access? Open a request:
+Need production access?
 
-- [Pro tier request](https://github.com/probe6621/toroidal-compression-public/issues/new?title=Pro%20Tier%20Access%20Request)
-- [Enterprise inquiry](https://github.com/probe6621/toroidal-compression-public/issues/new?title=Enterprise%20Pipeline%20Inquiry)
+- [Upgrade to Pro ($149/mo)](https://clearsolutions.lemonsqueezy.com/checkout/buy/f7172d35-feea-4d25-8adf-1a71b8ff992c)
+- [Request Enterprise API Access](mailto:contact@epsilonframework.org?subject=Enterprise%20Pipeline%20Inquiry)
 
 ## License
 
