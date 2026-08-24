@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toroidal Compression | Topology-Driven Compression for Telemetry & IoT</title>
+  <meta name="description" content="Toroidal Compression is a topology-driven Python compression engine for telemetry, IoT, and sensor streams with exact residual reconstruction, optional lz4 entropy packaging, and built-in benchmarking." />
+  <meta name="keywords" content="telemetry compression, IoT compression, sensor stream compression, toroidal manifold, residual reconstruction, lz4 entropy packaging, benchmark harness" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0b0f19" />
+  <link rel="canonical" href="https://probe6621.github.io/toroidal-compression-public/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Toroidal Compression | Topology-Driven Compression for Telemetry & IoT" />
+  <meta property="og:description" content="A research-oriented compression engine for multi-variable telemetry with exact residual reconstruction, optional lz4 entropy packaging, and benchmark tooling." />
+  <meta property="og:url" content="https://probe6621.github.io/toroidal-compression-public/" />
+  <meta property="og:site_name" content="Toroidal Compression" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Toroidal Compression | Topology-Driven Compression for Telemetry & IoT" />
+  <meta name="twitter:description" content="Topology-driven compression for telemetry, IoT, and sensor streams with exact reconstruction and built-in benchmark tooling." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: {
+              900: "#0b0f19",
+              800: "#111827",
+              700: "#1f2937",
+              600: "#374151"
+            },
+            accent: {
+              500: "#6366f1",
+              600: "#4f46e5",
+              400: "#818cf8"
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Toroidal Compression",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Cross-platform",
+    "description": "Topology-driven Python compression engine for telemetry, IoT, and sensor streams with exact residual reconstruction, optional lz4 entropy packaging, and benchmark tooling.",
+    "url": "https://probe6621.github.io/toroidal-compression-public/",
+    "softwareVersion": "0.1.0",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Toroidal Compression?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Toroidal Compression is a Python compression engine for multi-variable telemetry that combines toroidal manifold mapping, residual correction, and optional entropy packaging for exact reconstruction."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I benchmark Toroidal Compression?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Run python3 benchmark.py for a single benchmark or python3 sweep.py --output sweep_results.csv to export multi-parameter benchmark results."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What data types is Toroidal Compression designed for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is designed for telemetry, IoT, sensor streams, radar volumes, and structured numeric arrays that benefit from exact reconstruction and benchmarkable throughput."
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="bg-dark-900 text-gray-100 font-sans antialiased selection:bg-accent-500 selection:text-white">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-dark-900/80 backdrop-blur-md border-b border-dark-700/50">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-accent-600 to-accent-400 flex items-center justify-center shadow-lg shadow-accent-500/20">
+          <i class="fa-solid fa-circle-nodes text-white text-lg"></i>
+        </div>
+        <span class="text-xl font-bold tracking-tight text-white">Toroidal Compression</span>
+      </div>
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+        <a href="#features" class="hover:text-white transition-colors">Features</a>
+        <a href="#benchmarks" class="hover:text-white transition-colors">Benchmarks</a>
+        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+        <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+        <a href="https://github.com/probe6621/toroidal-compression-public" target="_blank" class="hover:text-white transition-colors">GitHub</a>
+      </nav>
+      <a href="#pricing" class="px-5 py-2.5 rounded-lg bg-accent-600 hover:bg-accent-500 text-white font-medium text-sm transition-all shadow-lg shadow-accent-600/20">
+        Request API Access
+      </a>
+    </div>
+  </header>
+
+  <section class="pt-32 pb-20 md:pt-44 md:pb-32 relative overflow-hidden">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-500/10 blur-[140px] rounded-full pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+      <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-dark-800 border border-dark-700 text-accent-400 text-xs font-semibold mb-8 uppercase tracking-wider">
+        <i class="fa-solid fa-bolt text-[10px]"></i>
+        <span>Next-Gen Telemetry Pipeline</span>
+      </div>
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight max-w-5xl mx-auto leading-tight">
+        Topology-Driven Compression for <span class="bg-gradient-to-r from-accent-400 to-indigo-300 bg-clip-text text-transparent">High-Bandwidth Telemetry</span>
+      </h1>
+      <p class="mt-6 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+        Compress multi-variable sensor streams, radar volumes, and IoT telemetry with toroidal manifold mapping, exact residual reconstruction, and optional <span class="text-gray-200">lz4</span> entropy packaging.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#pricing" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-accent-600 hover:bg-accent-500 text-white font-semibold transition-all shadow-xl shadow-accent-600/25 flex items-center justify-center space-x-2">
+          <span>Request API Access</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+        <a href="https://github.com/probe6621/toroidal-compression-public" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-dark-800 hover:bg-dark-700 text-gray-200 border border-dark-600 font-semibold transition-all flex items-center justify-center space-x-2">
+          <i class="fa-brands fa-github text-lg"></i>
+          <span>View on GitHub</span>
+        </a>
+      </div>
+
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div class="bg-dark-800/60 border border-dark-700 p-6 rounded-2xl backdrop-blur-sm text-center">
+          <div class="text-2xl font-bold text-white mb-1">~1.11e-16</div>
+          <div class="text-xs text-gray-400 font-medium tracking-wide uppercase">Machine-Precision Reconstruction</div>
+        </div>
+        <div class="bg-dark-800/60 border border-dark-700 p-6 rounded-2xl backdrop-blur-sm text-center">
+          <div class="text-2xl font-bold text-white mb-1">100,000 × 5</div>
+          <div class="text-xs text-gray-400 font-medium tracking-wide uppercase">Stress-Tested Stream Scale</div>
+        </div>
+        <div class="bg-dark-800/60 border border-dark-700 p-6 rounded-2xl backdrop-blur-sm text-center">
+          <div class="text-2xl font-bold text-white mb-1">CLI & Sweep</div>
+          <div class="text-xs text-gray-400 font-medium tracking-wide uppercase">Built-in Harness & CSV Export</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="py-24 bg-dark-800/20 border-y border-dark-700/50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">FAQ</h2>
+        <p class="mt-4 text-gray-400 text-lg">A few quick answers for teams evaluating topology-driven compression for telemetry and sensor workloads.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="bg-dark-800 border border-dark-700 p-8 rounded-2xl">
+          <h3 class="text-lg font-semibold text-white mb-3">What is Toroidal Compression?</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">A Python compression engine for multi-variable telemetry that combines toroidal manifold mapping, residual correction, and optional entropy packaging for exact reconstruction.</p>
+        </div>
+        <div class="bg-dark-800 border border-dark-700 p-8 rounded-2xl">
+          <h3 class="text-lg font-semibold text-white mb-3">What makes it different?</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">It preserves structure in the stream rather than flattening everything into a generic byte buffer, which makes it well suited to sensor and IoT data with phase relationships.</p>
+        </div>
+        <div class="bg-dark-800 border border-dark-700 p-8 rounded-2xl">
+          <h3 class="text-lg font-semibold text-white mb-3">How do I benchmark it?</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Use <code class="text-accent-400 font-mono">python3 benchmark.py</code> for a single run or <code class="text-accent-400 font-mono">python3 sweep.py --output sweep_results.csv</code> to export multi-parameter results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="py-24 bg-dark-800/40 border-y border-dark-700/50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Why Toroidal Compression?</h2>
+        <p class="mt-4 text-gray-400 text-lg">Traditional compression treats telemetry like a flat byte stream. Toroidal Compression preserves structural phase relationships, projecting data into topological space and recovering it with zero-loss precision.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-dark-800 border border-dark-700 p-8 rounded-2xl">
+          <div class="w-12 h-12 rounded-xl bg-accent-600/10 border border-accent-500/20 flex items-center justify-center text-accent-400 mb-6 text-xl"><i class="fa-solid fa-shapes"></i></div>
+          <h3 class="text-xl font-semibold text-white mb-3">Toroidal Projection</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Maps multi-variable arrays into continuous topological space, neutralizing linear redundancies across complex streams.</p>
+        </div>
+        <div class="bg-dark-800 border border-dark-700 p-8 rounded-2xl">
+          <div class="w-12 h-12 rounded-xl bg-accent-600/10 border border-accent-500/20 flex items-center justify-center text-accent-400 mb-6 text-xl"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="text-xl font-semibold text-white mb-3">Zero-Loss Residuals</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Exact reconstruction tracking via delta residual correction, ensuring zero degradation on critical data paths.</p>
+        </div>
+        <div class="bg-dark-800 border border-dark-700 p-8 rounded-2xl">
+          <div class="w-12 h-12 rounded-xl bg-accent-600/10 border border-accent-500/20 flex items-center justify-center text-accent-400 mb-6 text-xl"><i class="fa-solid fa-bolt-lightning"></i></div>
+          <h3 class="text-xl font-semibold text-white mb-3">lz4 Entropy Packaging</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Optional high-speed entropy coding layer integrated cleanly at the serialization boundary for rapid over-the-air transit.</p>
+        </div>
+        <div class="bg-dark-800 border border-dark-700 p-8 rounded-2xl">
+          <div class="w-12 h-12 rounded-xl bg-accent-600/10 border border-accent-500/20 flex items-center justify-center text-accent-400 mb-6 text-xl"><i class="fa-solid fa-terminal"></i></div>
+          <h3 class="text-xl font-semibold text-white mb-3">CLI & Automated Sweeps</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Out-of-the-box command-line tools and multi-parameter sweep harnesses with full CSV export capabilities.</p>
+        </div>
+        <div class="bg-dark-800 border border-dark-700 p-8 rounded-2xl">
+          <div class="w-12 h-12 rounded-xl bg-accent-600/10 border border-accent-500/20 flex items-center justify-center text-accent-400 mb-6 text-xl"><i class="fa-solid fa-microchip"></i></div>
+          <h3 class="text-xl font-semibold text-white mb-3">Edge & C++ Roadmap</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Designed for future C++ hardware acceleration, satellite flight hardware, and high-frequency IoT edge aggregators.</p>
+        </div>
+        <div class="bg-dark-800 border border-dark-700 p-8 rounded-2xl">
+          <div class="w-12 h-12 rounded-xl bg-accent-600/10 border border-accent-500/20 flex items-center justify-center text-accent-400 mb-6 text-xl"><i class="fa-solid fa-vial-circle-check"></i></div>
+          <h3 class="text-xl font-semibold text-white mb-3">CI-Backed Test Suite</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Fully tested Python package layout with automated GitHub Actions workflows running rigorous test matrices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="benchmarks" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Empirical Stress Test Results</h2>
+        <p class="mt-4 text-gray-400 text-lg">Rigorous multi-parameter benchmarks validate structural stability, high throughput speed, and machine-precision reconstruction.</p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="bg-dark-800 border border-dark-700 p-8 rounded-3xl space-y-6">
+          <h3 class="text-xl font-semibold text-white flex items-center space-x-3">
+            <i class="fa-solid fa-chart-line text-accent-400"></i>
+            <span>Stress Test Run Profile</span>
+          </h3>
+          <div class="space-y-4 text-sm">
+            <div class="flex justify-between py-3 border-b border-dark-700"><span class="text-gray-400">Target Stream Shape</span><span class="font-mono text-white">100,000 × 5 (n=2, entropy on)</span></div>
+            <div class="flex justify-between py-3 border-b border-dark-700"><span class="text-gray-400">Raw Stream Size</span><span class="font-mono text-white">4,000,000 bytes</span></div>
+            <div class="flex justify-between py-3 border-b border-dark-700"><span class="text-gray-400">Serialized Package Size</span><span class="font-mono text-white">9,993,751 bytes</span></div>
+            <div class="flex justify-between py-3 border-b border-dark-700"><span class="text-gray-400">Encode Execution Time</span><span class="font-mono text-accent-400">0.297 seconds</span></div>
+            <div class="flex justify-between py-3 border-b border-dark-700"><span class="text-gray-400">Decode Execution Time</span><span class="font-mono text-accent-400">0.042 seconds</span></div>
+            <div class="flex justify-between py-3"><span class="text-gray-400">Max Reconstruction Error</span><span class="font-mono text-green-400">~1.11e-16 (Exact)</span></div>
+          </div>
+        </div>
+        <div class="space-y-6">
+          <div class="bg-dark-800/80 border border-dark-700 p-6 rounded-2xl">
+            <h4 class="font-semibold text-white mb-2 flex items-center space-x-2"><i class="fa-solid fa-check text-green-400 text-sm"></i><span>Multi-Parameter Sweep Coverage</span></h4>
+            <p class="text-gray-400 text-sm leading-relaxed">Sweeps executed across scale factors <code class="text-accent-400 font-mono">n = 1, 2, 3</code> and stream configurations <code class="text-accent-400 font-mono">10000x5</code>, <code class="text-accent-400 font-mono">50000x3</code>, and <code class="text-accent-400 font-mono">50000x5</code> with entropy toggled dynamically. Results exported instantly to structured CSV.</p>
+          </div>
+          <div class="bg-dark-800/80 border border-dark-700 p-6 rounded-2xl">
+            <h4 class="font-semibold text-white mb-2 flex items-center space-x-2"><i class="fa-solid fa-code text-accent-400 text-sm"></i><span>Quick CLI Execution</span></h4>
+            <div class="bg-dark-900 p-4 rounded-xl font-mono text-xs text-gray-300 overflow-x-auto border border-dark-700">python3 benchmark.py --length 2048 --dimensions 3 --scale 1 --compress-entropy</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="py-24 bg-dark-800/40 border-t border-dark-700/50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Flexible Commercial Pricing</h2>
+        <p class="mt-4 text-gray-400 text-lg">Engineered for everyone from independent researchers to enterprise-grade aerospace telemetry fleets.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        <div class="bg-dark-800 border border-dark-700 rounded-3xl p-8 flex flex-col justify-between">
+          <div>
+            <div class="text-sm font-semibold text-accent-400 uppercase tracking-wider mb-2">Developer / Open Source</div>
+            <div class="text-4xl font-extrabold text-white mb-1">Free</div>
+            <p class="text-gray-400 text-sm mb-6">For independent researchers, students, and prototyping.</p>
+            <ul class="space-y-3 text-sm text-gray-300 mb-8">
+              <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-accent-400"></i><span>Full access to the GitHub repo</span></li>
+              <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-accent-400"></i><span>Standard Python package</span></li>
+              <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-accent-400"></i><span>CLI benchmark & sweep tools</span></li>
+            </ul>
+          </div>
+          <a href="https://github.com/probe6621/toroidal-compression-public" target="_blank" class="w-full py-3.5 rounded-xl bg-dark-700 hover:bg-dark-600 text-white font-semibold text-center transition-all">View Repository</a>
+        </div>
+
+        <div class="bg-dark-800 border-2 border-accent-500 rounded-3xl p-8 flex flex-col justify-between relative shadow-2xl shadow-accent-500/10">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-accent-600 text-white text-xs font-bold uppercase tracking-wider">Most Popular</div>
+          <div>
+            <div class="text-sm font-semibold text-accent-400 uppercase tracking-wider mb-2">Pro</div>
+            <div class="text-4xl font-extrabold text-white mb-1">$149<span class="text-lg font-normal text-gray-400"> / mo</span></div>
+            <p class="text-gray-400 text-sm mb-6">For small engineering teams and active developers.</p>
+            <ul class="space-y-3 text-sm text-gray-300 mb-8">
+              <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-accent-400"></i><span>Advanced residual quantization controls</span></li>
+              <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-accent-400"></i><span>Priority access to upcoming C++ core</span></li>
+              <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-accent-400"></i><span>Custom packaging profiles</span></li>
+              <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-accent-400"></i><span>Standard email & repo support</span></li>
+            </ul>
+          </div>
+          <a href="https://github.com/probe6621/toroidal-compression-public/issues/new?title=Pro%20Tier%20Access%20Request" target="_blank" class="w-full py-3.5 rounded-xl bg-accent-600 hover:bg-accent-500 text-white font-semibold text-center transition-all shadow-lg shadow-accent-600/25">Upgrade to Pro</a>
+        </div>
+
+        <div class="bg-dark-800 border border-dark-700 rounded-3xl p-8 flex flex-col justify-between">
+          <div>
+            <div class="text-sm font-semibold text-accent-400 uppercase tracking-wider mb-2">Enterprise Pipeline</div>
+            <div class="text-4xl font-extrabold text-white mb-1">Custom</div>
+            <p class="text-gray-400 text-sm mb-2"><span class="text-accent-400 font-semibold">Starts at $1,499 / mo</span></p>
+            <p class="text-gray-400 text-sm mb-6">For aerospace, defense, and large-scale IoT fleets.</p>
+            <ul class="space-y-3 text-sm text-gray-300 mb-8">
+              <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-accent-400"></i><span>Dedicated low-latency C++ edge binaries</span></li>
+              <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-accent-400"></i><span>Custom manifold scaling ($n$-factor tuning)</span></li>
+              <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-accent-400"></i><span>SLA-backed pipeline support</span></li>
+              <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-accent-400"></i><span>Custom integrations & dedicated engineer</span></li>
+            </ul>
+          </div>
+          <a href="https://github.com/probe6621/toroidal-compression-public/issues/new?title=Enterprise%20Pipeline%20Inquiry" target="_blank" class="w-full py-3.5 rounded-xl bg-dark-700 hover:bg-dark-600 text-white font-semibold text-center transition-all">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-12 border-t border-dark-700 text-center text-sm text-gray-500">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center space-x-2"><i class="fa-solid fa-circle-nodes text-accent-400"></i><span class="text-gray-300 font-medium">Toroidal Compression Engine</span></div>
+      <div>&copy; 2026 Toroidal Compression Research & Systems. All rights reserved.</div>
+      <div class="flex space-x-6">
+        <a href="https://github.com/probe6621/toroidal-compression-public" target="_blank" class="hover:text-gray-300 transition-colors">GitHub</a>
+        <a href="#benchmarks" class="hover:text-gray-300 transition-colors">Benchmarks</a>
+        <a href="#pricing" class="hover:text-gray-300 transition-colors">Pricing</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

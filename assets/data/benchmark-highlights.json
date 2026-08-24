@@ -1,0 +1,20 @@
+{
+  "single_benchmark": {
+    "shape": [100000, 5],
+    "scale_n": 2,
+    "entropy_compressed": true,
+    "raw_bytes": 4000000,
+    "compressed_bytes": 9993751,
+    "compression_ratio": 0.4,
+    "percent_savings": -149.84,
+    "encode_seconds": 0.297179,
+    "decode_seconds": 0.041742,
+    "max_abs_error": 1.1102230246251565e-16
+  },
+  "sweep": {
+    "scales": [1, 2, 3],
+    "shapes": [[10000, 5], [50000, 3], [50000, 5]],
+    "entropy_modes": [false, true],
+    "max_abs_error_observed": 1.1102230246251565e-16
+  }
+}
