@@ -34,6 +34,20 @@ pip install -e .
 toroidal-demo-benchmark --length 1024 --dimensions 3 --scale 1
 ```
 
+## Hugging Face Demo
+
+This repo also includes a lightweight Gradio app for a Hugging Face Space demo experience.
+
+```bash
+python app.py
+```
+
+The Hugging Face demo is intentionally constrained to the same public evaluation limits:
+
+- max samples: `4096`
+- max dimensions: `3`
+- entropy packaging disabled in demo
+
 Demo limits are intentionally enforced:
 
 - max samples: `4096`
