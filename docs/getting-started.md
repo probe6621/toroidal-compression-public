@@ -1,6 +1,6 @@
 # Getting Started
 
-This public repository hosts the Demo/Evaluation landing page and docs.
+This public repository hosts the Demo/Evaluation landing page, docs, and a gated demo code package.
 
 ## View locally
 
@@ -13,6 +13,22 @@ Then open `http://localhost:8080`.
 ## Evaluate performance claims
 
 See [benchmark-results.md](benchmark-results.md) for tested runtime and reconstruction metrics captured from stress runs.
+
+## Run the gated demo package
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+pip install -e .
+toroidal-demo-benchmark --length 1024 --dimensions 3 --scale 1
+```
+
+Demo limits:
+
+- max samples: `4096`
+- max dimensions: `3`
+- entropy compression is disabled
 
 ## Need production access?
 

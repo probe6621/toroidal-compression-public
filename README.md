@@ -24,6 +24,22 @@ This public Demo Edition is designed for evaluation and technical trust:
 - documented stress-test telemetry
 - CI-backed repo health checks
 
+## Run the Demo Code
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+pip install -e .
+toroidal-demo-benchmark --length 1024 --dimensions 3 --scale 1
+```
+
+Demo limits are intentionally enforced:
+
+- max samples: `4096`
+- max dimensions: `3`
+- entropy packaging disabled in demo
+
 ## Demo Edition vs Pro / Enterprise
 
 | Feature | Demo Edition (Free) | Pro / Enterprise |

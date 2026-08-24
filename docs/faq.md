@@ -4,6 +4,10 @@
 
 A public demo/evaluation repository with the SEO landing page, benchmark methodology, and conversion path to Pro/Enterprise access.
 
+## Is there runnable code in the free repo?
+
+Yes. The public package includes a gated demo compressor and benchmark CLI intended for evaluation workloads.
+
 ## Does this repo contain the full commercial source?
 
 No. Full commercial source and deployment assets remain in the private core repository.
@@ -11,6 +15,12 @@ No. Full commercial source and deployment assets remain in the private core repo
 ## Why pay for Pro instead of staying free?
 
 The free edition is for evaluation. Pro is for production: packaged commercial build delivery, managed updates, commercial deployment terms, and priority support/SLA-backed response targets.
+
+## What limits are enforced in the demo code?
+
+- Maximum samples per stream: `4096`
+- Maximum dimensions per stream: `3`
+- Entropy packaging is disabled
 
 ## How do I request full access?
 
