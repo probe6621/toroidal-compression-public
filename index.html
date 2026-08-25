@@ -39,6 +39,62 @@
       }
     };
   </script>
+  <style>
+    .enterprise-value {
+      margin-top: 3rem;
+      padding: 2rem;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 1.5rem;
+      background: rgba(15, 23, 42, 0.72);
+      box-shadow: 0 20px 50px rgba(79, 70, 229, 0.08);
+    }
+    .enterprise-value h2 {
+      font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      text-align: center;
+      color: #f8fafc;
+      margin-bottom: 1rem;
+    }
+    .enterprise-value p {
+      color: #cbd5e1;
+      line-height: 1.7;
+    }
+    .roi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .roi-card {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      border-radius: 1rem;
+      padding: 1.25rem;
+      text-align: left;
+    }
+    .roi-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #e2e8f0;
+      margin-bottom: 0.75rem;
+    }
+    .savings {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #a5b4fc;
+      margin-bottom: 0.5rem;
+    }
+    .roi-total {
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(148, 163, 184, 0.2);
+      text-align: center;
+    }
+    .roi-total p {
+      margin: 0.35rem 0;
+    }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -136,6 +192,34 @@
           <span>Open Live Demo</span>
         </a>
       </div>
+
+      <section class="enterprise-value max-w-5xl mx-auto">
+        <h2>Why Topological Compression Pays for Itself</h2>
+        <p>Consider a mid-market enterprise handling <strong>50 Terabytes</strong> of active telemetry and <strong>20 Terabytes</strong> of monthly cloud egress.</p>
+        
+        <div class="roi-grid">
+          <div class="roi-card">
+            <h3>Storage Footprint (-60%)</h3>
+            <p class="savings">Saves $8,280/yr</p>
+            <p>Reduced raw S3 and block storage infrastructure overhead.</p>
+          </div>
+          <div class="roi-card">
+            <h3>Network Egress (-60%)</h3>
+            <p class="savings">Saves $12,360/yr</p>
+            <p>Lower metered data transfer fees across cross-region pipelines.</p>
+          </div>
+          <div class="roi-card">
+            <h3>Compute Scaling</h3>
+            <p class="savings">Saves $25,000/yr</p>
+            <p>Eliminates the need to provision extra server clusters for raw streams.</p>
+          </div>
+        </div>
+
+        <div class="roi-total">
+          <p><strong>Total Hard-Dollar Infrastructure Savings: $45,640+ Annually</strong></p>
+          <p>At an enterprise license of $15,000, the platform pays for itself in under 4 months and delivers a 3x net ROI in year one.</p>
+        </div>
+      </section>
 
       <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
         <div class="bg-dark-800/60 border border-dark-700 p-6 rounded-2xl backdrop-blur-sm text-center">
