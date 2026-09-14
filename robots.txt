@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://probe6621.github.io/toroidal-compression-public/sitemap.xml
